@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dokument</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="js/main.js"></script>
+    <script>
+    
+        function iloczyn(liczba1, liczba2, liczba3){
+            var iloczynLiczb = liczba1 * liczba2 * liczba3;
+            return iloczynLiczb;
+        }
+        
+    var wynik = iloczyn(2,2,6);
+        console.log(wynik);
+    </script>
+    
+    
+        <script>
+    // stwórz funkcję, która będzie tworzyć dane o osobie - imie, nazwisko, wiek
+    // każde wywołanie tej funkcji będzie przypisywać do tablicy globalnej kolejny index
+    // stwórz drugą funkcję, która za pomocą pętli prejdzie do tablicy globalnej z danymi osób i wyświetli je w konsoli
+         
+        //pusta tablica    
+        var daneOsob = [];
+        
+        //deklaracja funkcji generującej dane o osobie
+            
+        function dodajDane(imie, nazwisko, wiek) {
+            var osoba = imie + " " + nazwisko + " " + wiek;
+            return osoba;
+        }
+            
+        //deklaracja funkcji odpowiedzialnej za wyświetlanie tablicy globalnen
+        
+        function wyswietlDane() {
+            daneOsob.forEach(function(element, index){
+                console.log(element);
+            });
+        }
+            
+        //dodaje nowo tworzone osoby do tablicy globalnej
+            var nowaOsoba = dodajDane( "Kasia", "Nowak", 26);
+            daneOsob.push( nowaOsoba );  
+            
+            var nowaOsoba2 = dodajDane( "Marek", "Jurek", 55);
+            daneOsob.push( nowaOsoba2 );  
+            
+            
+        //wyswietla dane z tablicy globalnej    
+            wyswietlDane();
+            
+    </script>
+    
+    
+    <!-- obiekty w JS-->
+    
+    <script>
+    
+        class Komentarz {
+            constructor(uzytkownik, tresc, wyswietlony) {
+                this.uzytkownik = uzytkownik;
+                this.tresc = tresc;
+                this.wyswietlony = wyswietlony;
+            }
+            
+            wyswietl() {
+                if( this.wyswietlony == true) {
+                    console.log( "Komentarz: \n" + this.uzytkownik + " \n" + this.tresc );
+                } else {
+                    console.log("Komentarz zablokowany");
+                }
+                
+            }
+        }
+        
+        var nowyKomentarz = new Komentarz("Magda", "Bardzo fajny tekst", true);
+        nowyKomentarz.wyswietl();
+        
+        var  nowyKomentarz = new Komentarz("Marcin", "Spieprzaj dziadu", false);
+        nowyKomentarz.wyswietl();
+        
+    </script>
+    
+    <script>
+    
+    var zmiennaGlobalna ="AAAAAAAAAAAAAAAAAAAAAAA";
+        
+        function zakresWidocznosciZmiennych () {
+        var zmiennaGlobalna = "BBBBBBBBBBBBBBBBBBBBB";
+            console.log(zmiennaGlobalna);
+        }
+        
+        zakresWidocznosciZmiennych();
+        console.log(zmiennaGlobalna);
+        
+    </script>
+    
+</body>
+</html>
